@@ -1,9 +1,32 @@
+import { Award, Building, Users, Clock } from 'lucide-react';
+
+// Stats Component with animations and icons
 export default function Stats() {
     const stats = [
-        { name: 'Engineering Colleges in Network', value: '10+' },
-        { name: 'Industry Partnerships', value: '5+' },
-        { name: 'Technical Mentors', value: '15+' },
-        { name: 'Years of Experience', value: '3+' },
+        {
+            name: 'Engineering Colleges in Network',
+            value: '10+',
+            icon: Building,
+            description: 'Leading institutions across regions'
+        },
+        {
+            name: 'Industry Partnerships',
+            value: '5+',
+            icon: Award,
+            description: 'Top tech companies'
+        },
+        {
+            name: 'Technical Mentors',
+            value: '15+',
+            icon: Users,
+            description: 'Industry experts'
+        },
+        {
+            name: 'Years of Experience',
+            value: '3+',
+            icon: Clock,
+            description: 'Of excellence in education'
+        },
     ];
 
     const certifications = [
@@ -42,55 +65,86 @@ export default function Stats() {
                         </p>
                     </div>
 
-                    {/* Stats Grid */}
-                    <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
+                    {/* Enhanced Stats Grid with Icons and Hover Effects */}
+                    <dl className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                         {stats.map((stat) => (
-                            <div key={stat.name} className="flex flex-col bg-gray-50 p-8">
-                                <dt className="text-sm font-semibold leading-6 text-gray-600">{stat.name}</dt>
-                                <dd className="order-first text-3xl font-semibold tracking-tight text-blue-600">
+                            <div
+                                key={stat.name}
+                                className="flex flex-col bg-white p-8 rounded-xl shadow-sm border border-gray-100 
+                                         hover:shadow-lg hover:border-blue-500 transition-all duration-300"
+                            >
+                                <dt className="flex items-center gap-2 text-sm font-semibold text-gray-600">
+                                    <stat.icon className="h-5 w-5 text-blue-500" />
+                                    {stat.name}
+                                </dt>
+                                <dd className="order-first text-3xl font-bold text-blue-600">
                                     {stat.value}
                                 </dd>
+                                <p className="mt-2 text-sm text-gray-500">{stat.description}</p>
                             </div>
                         ))}
                     </dl>
 
-                    {/* Certifications */}
+                    {/* Enhanced Certifications Section */}
                     <div className="mt-20">
-                        <h3 className="text-center text-2xl font-semibold mb-12">Our Certifications & Partnerships</h3>
+                        <h3 className="text-center text-2xl font-bold mb-12">Our Certifications & Partnerships</h3>
                         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
                             {certifications.map((cert) => (
-                                <div key={cert.name} className="flex flex-col items-center p-6 bg-gray-50 rounded-lg">
-                                    <img
-                                        className="h-24 w-auto mb-4 object-contain" // Increased height
-                                        src={cert.logo}
-                                        alt={cert.name}
-                                    />
-                                    <h4 className="text-lg font-semibold text-gray-900">{cert.name}</h4>
+                                <div
+                                    key={cert.name}
+                                    className="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm border border-gray-100
+                                             hover:shadow-lg hover:border-blue-500 transition-all duration-300"
+                                >
+                                    <div className="h-24 w-24 flex items-center justify-center mb-4 bg-gray-50 rounded-lg p-4">
+                                        <img
+                                            className="h-full w-auto object-contain"
+                                            src={cert.logo}
+                                            alt={cert.name}
+                                        />
+                                    </div>
+                                    <h4 className="text-lg font-semibold text-gray-900 text-center">{cert.name}</h4>
                                     <p className="mt-2 text-sm text-gray-600 text-center">{cert.description}</p>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    {/* College Network */}
+                    {/* Enhanced College Network Section */}
                     <div className="mt-20">
-                        <h3 className="text-center text-2xl font-semibold mb-8">Our College Network</h3>
+                        <h3 className="text-center text-2xl font-bold mb-8">Our College Network</h3>
                         <p className="text-center text-gray-600 mb-12">
                             We work with engineering colleges across:
                         </p>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                            <div className="p-6 bg-gray-50 rounded-lg">
-                                <h4 className="font-semibold text-lg mb-2">Hyderabad Region</h4>
-                                <p className="text-gray-600">Supporting colleges in HITEC City and surrounding areas</p>
-                            </div>
-                            <div className="p-6 bg-gray-50 rounded-lg">
-                                <h4 className="font-semibold text-lg mb-2">Warangal Zone</h4>
-                                <p className="text-gray-600">Partnering with engineering institutions in Warangal</p>
-                            </div>
-                            <div className="p-6 bg-gray-50 rounded-lg">
-                                <h4 className="font-semibold text-lg mb-2">Andhra Region</h4>
-                                <p className="text-gray-600">Expanding network to engineering colleges in Andhra Pradesh</p>
-                            </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {[
+                                {
+                                    region: 'Hyderabad Region',
+                                    description: 'Supporting colleges in HITEC City and surrounding areas',
+                                    icon: Building
+                                },
+                                {
+                                    region: 'Warangal Zone',
+                                    description: 'Partnering with engineering institutions in Warangal',
+                                    icon: Building
+                                },
+                                {
+                                    region: 'Andhra Region',
+                                    description: 'Expanding network to engineering colleges in Andhra Pradesh',
+                                    icon: Building
+                                }
+                            ].map((region) => (
+                                <div
+                                    key={region.region}
+                                    className="p-6 bg-white rounded-xl shadow-sm border border-gray-100
+                                             hover:shadow-lg hover:border-blue-500 transition-all duration-300"
+                                >
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <region.icon className="h-6 w-6 text-blue-500" />
+                                        <h4 className="font-semibold text-lg">{region.region}</h4>
+                                    </div>
+                                    <p className="text-gray-600">{region.description}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -98,4 +152,3 @@ export default function Stats() {
         </div>
     );
 }
-

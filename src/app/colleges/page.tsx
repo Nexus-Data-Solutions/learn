@@ -3,14 +3,14 @@ import { Building, Award, FileText, Users, ChevronRight } from 'lucide-react';
 
 const benefits = [
     {
-        title: "Commission Per Student",
-        description: "Earn 10% commission for every student enrolled through your institution",
+        title: "Growth & Recognition",
+        description: "Enhance your institution's technical excellence and innovation",
         icon: Award,
         details: [
-            "₹1,000 per student",
-            "Monthly payments",
-            "Transparent tracking",
-            "No hidden charges"
+            "Industry recognition",
+            "Technical excellence awards",
+            "Innovation showcase opportunities",
+            "Professional development"
         ]
     },
     {
@@ -61,7 +61,7 @@ export default function CollegesPage() {
                             Partner With Us
                         </h1>
                         <p className="text-xl mb-8">
-                            Become our Official Technical Innovation Partner with zero investment
+                            Join our Technical Innovation Partnership Program to empower your students
                         </p>
                         <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors flex items-center">
                             Partner Now
@@ -104,22 +104,22 @@ export default function CollegesPage() {
                                 <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <span className="text-white text-2xl font-bold">1</span>
                                 </div>
-                                <h3 className="text-xl font-semibold mb-2">Contact Us</h3>
-                                <p className="text-gray-600">Reach out to our partnership team</p>
+                                <h3 className="text-xl font-semibold mb-2">Connect</h3>
+                                <p className="text-gray-600">Schedule a consultation with our team</p>
                             </div>
                             <div className="text-center">
                                 <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <span className="text-white text-2xl font-bold">2</span>
                                 </div>
-                                <h3 className="text-xl font-semibold mb-2">Sign Agreement</h3>
-                                <p className="text-gray-600">Complete partnership formalities</p>
+                                <h3 className="text-xl font-semibold mb-2">Collaborate</h3>
+                                <p className="text-gray-600">Design a customized partnership program</p>
                             </div>
                             <div className="text-center">
                                 <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <span className="text-white text-2xl font-bold">3</span>
                                 </div>
-                                <h3 className="text-xl font-semibold mb-2">Start Benefiting</h3>
-                                <p className="text-gray-600">Begin earning commissions immediately</p>
+                                <h3 className="text-xl font-semibold mb-2">Transform</h3>
+                                <p className="text-gray-600">Start empowering your students</p>
                             </div>
                         </div>
                     </div>

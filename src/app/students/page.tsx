@@ -101,7 +101,7 @@ export default function StudentsPage() {
                         <h2 className="text-3xl font-bold mb-8">Simple, Transparent Pricing</h2>
                         <div className="bg-gray-50 rounded-lg p-8 shadow-md">
                             <div className="text-center">
-                                <span className="text-4xl font-bold text-blue-600">₹10,000</span>
+                                <span className="text-4xl font-bold text-blue-600">₹8,999</span>
                                 <span className="text-gray-600 ml-2">one-time payment</span>
                             </div>
                             <div className="mt-6 grid grid-cols-2 gap-4">
