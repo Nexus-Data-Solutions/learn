@@ -1,4 +1,4 @@
-import { BookOpen, Users, Award, FileCode, Clock, Briefcase } from 'lucide-react';
+import { BookOpen, FileCode, Clock, Briefcase } from 'lucide-react';
 
 const features = [
     {
