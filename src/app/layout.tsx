@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import FloatingWhatsApp from "@/components/home/Contact"; // Add this import
+import FloatingWhatsApp from "@/components/home/Contact";
+import Footer from "@/components/home/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
-        <FloatingWhatsApp /> {/* Add this component here */}
+        <div className="min-h-screen flex flex-col">
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </div>
+        <FloatingWhatsApp />
       </body>
     </html>
   );
