@@ -22,7 +22,6 @@ export default function RegisterPage() {
         setError(null);
 
         try {
-            // Register the user
             const { data: authData, error: authError } = await supabase.auth.signUp({
                 email: formData.email,
                 password: formData.password,
@@ -46,12 +45,18 @@ export default function RegisterPage() {
 
                 router.push('/dashboard');
             }
-        } catch (error: any) {
-            setError(error.message);
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                setError(error.message);
+            } else {
+                setError('An unexpected error occurred');
+            }
         } finally {
             setLoading(false);
         }
     };
+
+
 
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
