@@ -3,12 +3,13 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Menu, X, LogOut, ChevronDown } from 'lucide-react';
+import { Menu, X, LogOut, ChevronDown, MessageCircle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isContactOpen, setIsContactOpen] = useState(false);
     const router = useRouter();
 
     useEffect(() => {
@@ -54,6 +55,41 @@ export default function Header() {
                                 For Colleges
                                 <ChevronDown className="ml-1 h-4 w-4 opacity-60" />
                             </Link>
+
+                            <div className="relative">
+                                <button
+                                    onClick={() => setIsContactOpen(!isContactOpen)}
+                                    className="px-3 py-2 text-sm text-gray-700 hover:text-blue-600 rounded-md inline-flex items-center"
+                                >
+                                    Contact
+                                    <ChevronDown className="ml-1 h-4 w-4 opacity-60" />
+                                </button>
+
+                                {/* Contact Dropdown */}
+                                {isContactOpen && (
+                                    <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                                        <div className="py-1">
+                                            <Link
+                                                href="/contact"
+                                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                            >
+                                                Contact Form
+                                            </Link>
+                                            <a
+                                                href="https://wa.me/917032229659"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                            >
+                                                <span className="flex items-center">
+                                                    <MessageCircle className="w-4 h-4 mr-2 text-green-500" />
+                                                    WhatsApp Chat
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
                         </div>
 
                         {/* Auth Buttons */}
@@ -127,6 +163,23 @@ export default function Header() {
                             >
                                 For Colleges
                             </Link>
+                            <Link
+                                href="/contact"
+                                className="block px-3 py-2 text-base text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Contact Form
+                            </Link>
+                            <a
+                                href="https://wa.me/917032229659"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center px-3 py-2 text-base text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                <MessageCircle className="w-5 h-5 mr-2 text-green-500" />
+                                WhatsApp Chat
+                            </a>
                             {isLoggedIn ? (
                                 <>
                                     <Link
