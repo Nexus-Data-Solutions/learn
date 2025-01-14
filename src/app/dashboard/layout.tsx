@@ -34,7 +34,7 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
                     <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
                         <div className="flex flex-shrink-0 items-center px-4">
                             <Link href="/" className="text-xl font-bold text-white">
-                                TechPro Academy
+                                Learn - Nexus Data Solution
                             </Link>
                         </div>
                         <nav className="mt-5 flex-1 space-y-1 px-2">
@@ -67,7 +67,7 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
             <div className="md:hidden bg-blue-600 text-white p-4">
                 <div className="flex items-center justify-between">
                     <Link href="/" className="text-xl font-bold">
-                        TechPro Academy
+                        Learn - Nexus Data Solution
                     </Link>
                     <button
                         onClick={handleLogout}
